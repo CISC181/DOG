@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\DOG.Client.csproj" />
-    <ProjectReference Include="..\DOG.EF\DOG.EF.csproj" />
+    <ProjectReference Include="..\EF\DOG.EF.csproj" />
     <ProjectReference Include="..\Shared\DOG.Shared.csproj" />
   </ItemGroup>
 
