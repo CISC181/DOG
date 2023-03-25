@@ -1,0 +1,6 @@
+Add-Migration initial
+
+Update-database
+
+Want to Scaffold?
+Scaffold-DbContext "Data Source=3.80.81.224:1521/SPRING2023PDB;User ID=DOG;Password=DOGPW"Oracle.EntityFrameworkCore -OutputDir Models -ContextDir Data -Project "DOG.EF"  -Context "DOGOracleContext" -DataAnnotations -NoOnConfiguring -Force

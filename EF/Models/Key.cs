@@ -6,23 +6,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DOG.EF.Models
 {
-    [Index("Use", Name = "IX_Keys_Use")]
+    [Table("KEYS")]
+    [Index("Use", Name = "IX_KEYS_USE")]
     public partial class Key
     {
         [Key]
+        [Column("ID")]
         public string Id { get; set; } = null!;
+        [Column("VERSION")]
         [Precision(10)]
         public int Version { get; set; }
+        [Column("CREATED")]
         [Precision(7)]
         public DateTime Created { get; set; }
+        [Column("USE")]
         public string? Use { get; set; }
+        [Column("ALGORITHM")]
         [StringLength(100)]
         public string Algorithm { get; set; } = null!;
-        [Column("IsX509Certificate")]
+        [Column("IS_X509_CERTIFICATE")]
         [Precision(1)]
-        public bool IsX509certificate { get; set; }
+        public bool IsX509Certificate { get; set; }
+        [Column("DATA_PROTECTED")]
         [Precision(1)]
         public bool DataProtected { get; set; }
+        [Column("DATA")]
         public string Data { get; set; } = null!;
     }
 }

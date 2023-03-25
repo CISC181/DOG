@@ -6,7 +6,7 @@ using DOG.Server.Models;
 
 namespace DOG.Server.Data;
 
-public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+public partial  class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
 {
     public ApplicationDbContext(
         DbContextOptions options,

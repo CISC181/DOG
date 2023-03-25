@@ -10,7 +10,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DOG.Shared", "Shared\DOG.Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DOG.EF", "EF\DOG.EF.csproj", "{63A07D7C-374F-4269-B2EA-A79F32E81159}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOG.UT", "DOG.UT\DOG.UT.csproj", "{87306D2A-D470-49BD-B85F-A499DDB07EC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DOG.UT", "DOG.UT\DOG.UT.csproj", "{87306D2A-D470-49BD-B85F-A499DDB07EC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2C646BF9-D546-48AA-AB78-798C22E5E626}"
+	ProjectSection(SolutionItems) = preProject
+		Commands.txt = Commands.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

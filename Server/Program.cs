@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using DOG.Server.Data;
 using DOG.Server.Models;
+using DOG.EF.Data;
+using DOG.Shared.Utils;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,14 @@ var connectionString = builder.Configuration.GetConnectionString("DOGConnection"
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseOracle(connectionString));
+
+builder.Services.AddDbContext<DOGOracleContext>(options =>
+options.UseOracle(connectionString));
+
+var optionsBuilder = new DbContextOptionsBuilder<DOGOracleContext>();
+optionsBuilder.UseOracle(connectionString);
+
+builder.Services.AddSingleton(new OraTransMsgs((optionsBuilder.Options)));
 
 
 

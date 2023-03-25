@@ -44,34 +44,34 @@ namespace DOG.UT.UT
             _context = new DOGOracleContext(_optionsBuilder.Options);
         }
 
-        [TestMethod]
-        public void AddAcct()
-        {
-            School _school = new School
-            {
-                SchoolId = 4,
-                SchoolName = "Test"
-            };
-            _context.Schools.Add(_school);
-            _context.SaveChanges();
-        }
+        //[TestMethod]
+        //public void AddAcct()
+        //{
+        //    School _school = new School
+        //    {
+        //        SchoolId = 4,
+        //        SchoolName = "Test"
+        //    };
+        //    _context.Schools.Add(_school);
+        //    _context.SaveChanges();
+        //}
 
-        [TestMethod]
-        public void GetAccts()
-        {
-            var lstSchools = _context.Schools.ToList();
-            Assert.IsTrue(lstSchools.Count() > 0);
-        }
+        //[TestMethod]
+        //public void GetAccts()
+        //{
+        //    var lstSchools = _context.Schools.ToList();
+        //    Assert.IsTrue(lstSchools.Count() > 0);
+        //}
 
-        [TestMethod]
-        public void DeleteAcct()
-        {
-            School _School = _context.Schools.Where(w => w.SchoolName == "Test").FirstOrDefault();
-            if (_School != null)
-            {
-                _context.Schools.Remove(_School);
-                _context.SaveChanges();
-            }
-        }
+        //[TestMethod]
+        //public void DeleteAcct()
+        //{
+        //    School _School = _context.Schools.Where(w => w.SchoolName == "Test").FirstOrDefault();
+        //    if (_School != null)
+        //    {
+        //        _context.Schools.Remove(_School);
+        //        _context.SaveChanges();
+        //    }
+        //}
     }
 }

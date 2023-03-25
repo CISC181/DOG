@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DOG.EF.Models
 {
+    [Table("ASP_NET_USERS")]
     [Index("NormalizedEmail", Name = "EmailIndex")]
     [Index("NormalizedUserName", Name = "UserNameIndex", IsUnique = true)]
     public partial class AspNetUser
@@ -19,33 +20,50 @@ namespace DOG.EF.Models
         }
 
         [Key]
+        [Column("ID")]
         public string Id { get; set; } = null!;
+        [Column("FIRST_NAME")]
+        public string FirstName { get; set; } = null!;
+        [Column("LAST_NAME")]
+        public string LastName { get; set; } = null!;
+        [Column("USER_NAME")]
         [StringLength(256)]
         public string? UserName { get; set; }
+        [Column("NORMALIZED_USER_NAME")]
         [StringLength(256)]
         public string? NormalizedUserName { get; set; }
+        [Column("EMAIL")]
         [StringLength(256)]
         public string? Email { get; set; }
+        [Column("NORMALIZED_EMAIL")]
         [StringLength(256)]
         public string? NormalizedEmail { get; set; }
+        [Column("EMAIL_CONFIRMED")]
         [Precision(1)]
         public bool EmailConfirmed { get; set; }
+        [Column("PASSWORD_HASH")]
         public string? PasswordHash { get; set; }
+        [Column("SECURITY_STAMP")]
         public string? SecurityStamp { get; set; }
+        [Column("CONCURRENCY_STAMP")]
         public string? ConcurrencyStamp { get; set; }
+        [Column("PHONE_NUMBER")]
         public string? PhoneNumber { get; set; }
+        [Column("PHONE_NUMBER_CONFIRMED")]
         [Precision(1)]
         public bool PhoneNumberConfirmed { get; set; }
+        [Column("TWO_FACTOR_ENABLED")]
         [Precision(1)]
         public bool TwoFactorEnabled { get; set; }
+        [Column("LOCKOUT_END")]
         [Precision(7)]
         public DateTimeOffset? LockoutEnd { get; set; }
+        [Column("LOCKOUT_ENABLED")]
         [Precision(1)]
         public bool LockoutEnabled { get; set; }
+        [Column("ACCESS_FAILED_COUNT")]
         [Precision(10)]
         public int AccessFailedCount { get; set; }
-        public string FirstName { get; set; } = null!;
-        public string LastName { get; set; } = null!;
 
         [InverseProperty("User")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
