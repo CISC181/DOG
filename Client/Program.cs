@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using DOG.Client;
+using DOG.Client.Services.Core;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -14,5 +15,7 @@ builder.Services.AddHttpClient("DOG.ServerAPI", client => client.BaseAddress = n
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("DOG.ServerAPI"));
 
 builder.Services.AddApiAuthorization();
+builder.Services.AddScoped<CourseService>();
+
 
 await builder.Build().RunAsync();

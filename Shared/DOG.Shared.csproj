@@ -9,7 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\EF\DOG.EF.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Telerik.DataSource" Version="2.1.3" />
+  </ItemGroup>
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
